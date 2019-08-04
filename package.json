@@ -1,6 +1,6 @@
 {
   "name": "svg2html",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "svg conversion html",
   "bin": {
     "svg2html": "bin/svg2html.js"
@@ -18,7 +18,15 @@
   "scripts": {
     "test": "rm -rf ./test/build &&  node bin/svg2html.js -i ./test/icons -o ./test/build -r '' -e ''"
   },
-  "keywords": [],
+  "keywords": [
+    "svg",
+    "svg2html",
+    "svg to html"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rochappy/svg2html.git"
+  },
   "author": "rochappy.sun@gmail.com",
   "license": "ISC"
 }
