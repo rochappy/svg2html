@@ -1,6 +1,6 @@
 {
   "name": "svg2html",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "svg conversion html",
   "bin": {
     "svg2html": "bin/svg2html.js"
