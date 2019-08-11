@@ -2,6 +2,9 @@
 
 <img src="/docs/svg2html.png" alt="svg2html" />
 
+# Overview
+Find the `*.svg` generated `index.html` file in a recursive folder. The root file will generate all svg icons with `all.html`, and other svg that generate the current directory.
+
 ## Usage
 Install with npm
 
@@ -13,8 +16,8 @@ npm i svg2html
 const svg2html = require('svg2html')
 
 svg2html.run({
-    inDir: `${__dirname}/icons/`,
-    outDir: `${__dirname}/build/`,
+    inDir: 'test/icons',
+    outDir: 'test/build',
     exclude: 'linecons',
     rmAttr: 'opacity|fill',
 });
@@ -32,7 +35,7 @@ svg2html.run({
     * example: `'fill|opacity|stroke'`
 
 ## CLI
-`svg2html.js -i ./test/icons -o ./test/build -r 'opacity|fill' -e 'linecons'`
+`svg2html.js -i test/icons -o test/build -r 'opacity|fill' -e 'linecons'`
 
 ```
 Usage: svg2html [options]
@@ -45,3 +48,4 @@ Options:
   -e, --exclude [exclude]  exclude directory, for example: "test" or "test|node_modules" (default: "node_modules")
   -h, --help               output usage information
 ```
+

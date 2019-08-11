@@ -1,7 +1,7 @@
 {
   "name": "svg2html",
-  "version": "1.0.5",
-  "description": "svg conversion html",
+  "version": "1.0.6",
+  "description": "Find the svg generated html file in a recursive folder.",
   "bin": {
     "svg2html": "bin/svg2html.js"
   },
@@ -16,7 +16,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "rm -rf ./test/build &&  node bin/svg2html.js -i ./test/icons -o ./test/build -r '' -e ''"
+    "test": "rm -rf test/build &&  node bin/svg2html.js -i test/icons -o test/build -r '' -e ''"
   },
   "keywords": [
     "svg",
