@@ -17,6 +17,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "testfile": "rm -rf test/build &&  node bin/svg2html.js -i './test/icons/custom/book.svg, ./test/icons/custom/flag.svg' -o test/build -r '' -e ''",
     "test": "rm -rf test/build &&  node bin/svg2html.js -i test/icons -o test/build -r '' -e ''"
   },
   "keywords": [
