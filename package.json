@@ -1,6 +1,6 @@
 {
   "name": "svg2html",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Find the svg generated html file in a recursive folder.",
   "bin": {
     "svg2html": "bin/svg2html.js"
