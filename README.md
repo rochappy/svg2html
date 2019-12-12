@@ -15,6 +15,7 @@ npm i svg2html
 ```javascript
 const svg2html = require('svg2html')
 
+// directory
 svg2html.run({
     inDir: 'test/icons',
     outDir: 'test/build',
@@ -22,10 +23,26 @@ svg2html.run({
     rmAttr: 'opacity|fill',
 });
 
+// svg file
+svg2html.run({
+    inDir: 'test/icons/brands/bing.svg',
+    outDir: 'test/build',
+    exclude: 'linecons',
+    rmAttr: 'opacity|fill',
+});
+// multiple svg
+svg2html.run({
+    inDir: ['test/icons/brands/bing.svg', 'test/icons/brands/github.svg', ...],
+    outDir: 'test/build',
+    exclude: 'linecons',
+    rmAttr: 'opacity|fill',
+});
+
+
 ```
 
 ## svg2html.run(options)
-* **inDir** `{String}` required
+* **inDir** `{String|Array}` required
 * **outDir** `{String}` required
 * **exclude** `{String}`
     * default: `'node_modules'`
@@ -42,7 +59,7 @@ Usage: svg2html [options]
 
 Options:
   -v, --version            output the version number
-  -i, --inDir <inDir>      svg input directory
+  -i, --inDir <inDir>      svg input directory or svg paths(examples: ./test/a.svg, ./test/b.svg
   -o, --outDir <outDir>    svg output directory
   -r, --rmAttr [rmAttr]    svg remove attr, for example: "fill" or "stroke|fill|opacity" (default: "")
   -e, --exclude [exclude]  exclude directory, for example: "test" or "test|node_modules" (default: "node_modules")

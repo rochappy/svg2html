@@ -13,7 +13,7 @@ const list = (val) => {
 program.version(pkg.version, '-v, --version');
 
 program
-  .option('-i, --inDir <inDir>', 'svg input directory', list)
+  .option('-i, --inDir <inDir>', 'svg input directory or svg paths(examples: ./test/a.svg, ./test/b.svg),', list)
   .option('-o, --outDir <outDir>', 'svg output directory')
   .option('-r, --rmAttr [rmAttr]', 'svg remove attr, for example: "fill" or "stroke|fill|opacity"', '')
   .option('-e, --exclude [exclude]', 'exclude directory, for example: "test" or "test|node_modules"', 'node_modules')
