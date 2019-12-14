@@ -106,10 +106,22 @@
     .svgs li:hover .svg svg{
       fill: #e74c3c;
     }
+    .search {
+      display: block;
+      width: 200px;
+      height: 30px;
+      padding-left: 10px;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
   <h1>svg2html</h1>
+  <input class="search" type="text" placeholder="输入svg名称搜索" />
+  <div class="app"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+<script class="tmpl" type="js/template">
   <% _.each(svgs, function(values, key) { %>
   <h2><%= key %> <span class="total"><%= values.length %></span></h2>
   <ul class="svgs">
@@ -129,5 +141,32 @@
   <% }) %>
   </ul>
   <% }) %>
-</body>
+</script>
+<script>
+  const svgs = $svgData;
+  const app = document.querySelector('.app');
+  const tmpl = document.querySelector('.tmpl');
+  const search = document.querySelector('.search');
+
+  const render = (filter) => {
+    const filters = {};
+
+    _.each(svgs, (item, key) => {
+      filters[key] = item.filter((svg) => {
+        return svg.name.includes(filter)
+      })
+    })
+
+    const html = _.template(tmpl.innerHTML)({
+      svgs: filter ? filters : svgs
+    })
+    app.innerHTML = html;
+  }
+
+  search.addEventListener('input', (e) => {
+    render(e.target.value)
+  });
+
+  render()
+</script>
 </html>
